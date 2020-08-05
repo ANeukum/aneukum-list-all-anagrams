@@ -3,6 +3,7 @@ package aneukum.bewerbung.lidl;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.URL;
 
 public class Main {
@@ -12,9 +13,13 @@ public class Main {
         URL url = Main.class.getClassLoader().getResource("sample.txt");
         if(url == null) throw new FileNotFoundException();
 
-        FileReader fileReader = new FileReader(url.getFile());
-        AnagramMap anagramMap = new AnagramMap(fileReader);
-        System.out.println(anagramMap.toString());
+        AnagramMap anagramMap;
+        try(FileReader fileReader = new FileReader(url.getFile())){
+             anagramMap = new AnagramMap(fileReader);
+        }
+        try(OutputStreamWriter outStream = new OutputStreamWriter(System.out)){
+            anagramMap.write(outStream);
+        }
     }
 
 }
