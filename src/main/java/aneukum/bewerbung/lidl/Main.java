@@ -1,9 +1,6 @@
 package aneukum.bewerbung.lidl;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.URL;
 
 public class Main {
@@ -18,7 +15,9 @@ public class Main {
              anagramMap = new AnagramMap(fileReader);
         }
         try(OutputStreamWriter outStream = new OutputStreamWriter(System.out)){
-            anagramMap.write(outStream);
+            BufferedWriter bufferedWriter = new BufferedWriter(outStream);
+            anagramMap.write(bufferedWriter);
+            bufferedWriter.flush();
         }
     }
 

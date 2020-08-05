@@ -22,7 +22,6 @@ public final class AnagramMap {
     }
 
     public void write(Writer writer) throws IOException {
-        BufferedWriter outputStream = new BufferedWriter(writer);
         for(List<String> lineList : anagramToStrings.values()){
             StringBuilder builder = new StringBuilder();
             if(lineList.size() > 1){
@@ -32,8 +31,7 @@ public final class AnagramMap {
                 }
                 builder.append("\n");
             }
-            outputStream.write(builder.toString());
+            writer.write(builder.toString());
         }
-        outputStream.flush();
     }
 }
