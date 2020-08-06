@@ -1,6 +1,6 @@
 # Build and run
 
-This project was created using jdk 1.8 and maven 3.6.0.
+This project was created using Jdk 1.8 and Maven 3.6.0.
 If you have them on path you can run the program using the following commands:
 
     git clone https://github.com/ANeukum/aneukum-list-all-anagrams.git
@@ -13,7 +13,8 @@ If you have them on path you can run the program using the following commands:
 
     java -cp . aneukum.bewerbung.schwarz.it.Main
     
-The project was created using IntelliJ but Exclipse or Netbeans should be able to do a maven import as well.
+The project was created using IntelliJ but Exclipse or Netbeans should be able to do a Maven import as well.
+
 The only dependency is Junit 5.
 
 # Design
