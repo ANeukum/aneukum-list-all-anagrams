@@ -11,7 +11,7 @@ If you have them on path you can run the program using the following commands:
 
     cd target/classes
 
-    java aneukum.bewerbung.schwarz.it.Main
+    java -cp . aneukum.bewerbung.schwarz.it.Main
     
 The project can be built and run like like any vanilla java project.
 The only dependency is Junit 5.
