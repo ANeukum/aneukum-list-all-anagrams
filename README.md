@@ -13,7 +13,7 @@ If you have them on path you can run the program using the following commands:
 
     java -cp . aneukum.bewerbung.schwarz.it.Main
     
-The project can be built and run like like any vanilla java project.
+The project was created using IntelliJ but Exclipse or Netbeans should be able to do a maven import as well.
 The only dependency is Junit 5.
 
 # Design
