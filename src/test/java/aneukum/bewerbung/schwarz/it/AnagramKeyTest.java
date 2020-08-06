@@ -1,4 +1,4 @@
-package aneukum.bewerbung.lidl;
+package aneukum.bewerbung.schwarz.it;
 
 import org.junit.jupiter.api.Test;
 

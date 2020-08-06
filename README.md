@@ -11,7 +11,7 @@ If you have them on path you can run the program using the following commands:
 
     cd target/classes
 
-    java aneukum.bewerbung.lidl.Main
+    java aneukum.bewerbung.schwarz.it.Main
     
 This should result in the required output.
 If problems occur the project can be built and run like like any vanilla java project.
@@ -70,7 +70,7 @@ A short test revealed that the current implementation takes a couple of minutes 
 The processor was the bottleneck therefore paralellization is an option.
 
 The task at hand does not lend itself to full parallelization.
-Whether a word is an anagram can only be decided if all other words are processed.
+Whether a word is an anagramKey can only be decided if all other words are processed.
 Therefore, if the input file is split in multiple parts that are processed inividually as if they were the entire input some a posteriori merging becomes necessary.
 Sorting the words according to word length reduces the amount of merging since words of different lengths can not be anagrams.
 This sorting can be achieved in linear time using bucket sort.

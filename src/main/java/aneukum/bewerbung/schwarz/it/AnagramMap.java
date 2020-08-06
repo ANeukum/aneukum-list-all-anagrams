@@ -1,4 +1,4 @@
-package aneukum.bewerbung.lidl;
+package aneukum.bewerbung.schwarz.it;
 
 import java.io.*;
 import java.util.*;
@@ -9,15 +9,15 @@ import java.util.*;
  */
 public final class AnagramMap {
 
-    private final HashMap<Anagram, List<String>> anagramToStrings = new HashMap<>();
+    private final HashMap<AnagramKey, List<String>> anagramToStrings = new HashMap<>();
 
     public AnagramMap(Reader reader) throws IOException{
         BufferedReader inputStream = new BufferedReader(reader);
         String line;
         while((line = inputStream.readLine()) != null){
-            Anagram anagram = new Anagram(line);
-            anagramToStrings.putIfAbsent(anagram, new ArrayList<>());
-            anagramToStrings.get(anagram).add(line);
+            AnagramKey anagramKey = new AnagramKey(line);
+            anagramToStrings.putIfAbsent(anagramKey, new ArrayList<>());
+            anagramToStrings.get(anagramKey).add(line);
         }
     }
 
