@@ -13,7 +13,6 @@ If you have them on path you can run the program using the following commands:
 
     java aneukum.bewerbung.schwarz.it.Main
     
-This should result in the required output.
 If problems occur the project can be built and run like like any vanilla java project.
 The only dependency is Junit 5.
 
@@ -26,6 +25,8 @@ A reasonable design consist therefore of a class for the keys and a class contai
 
 The keys are obtained by counting the characters in each line. 
 For example, the key of "ABCA" would contain the following information: 2xA, 1xB, 1xC.
+Thus each key is also a map.
+
 Alternatively the key could be the sorted string.
 While counting takes linear time and is therefore asymptotically faster than sorting the lines seem to be rather short. 
 Therefore other effects will dominate the execution time.
@@ -35,20 +36,20 @@ Otherwise it is possible to construct false positives as can be seen in one of t
 
 ## Maintainability
 AnagramKey and AnagramMap have single responsibilities and hide their implementation details. 
-They can only be used in the way that is documented by tests.
 Their names already tell that and how they are supposed to be used together.
+They can only be used in the way that is documented by tests.
 Also, they are immutable which further narrows down their usage and thereby reduces code complexity.
 
 The amount of tests and comments is rather low. 
 This is by choice since they can inhibit maintainability if they become outdated.
-If errors have severe consequences there have to be more tests.
+If errors have severe consequences there have to be should be more tests.
 On the other hand, if the code is likely to change fewer tests are appropriate.
 
 The use of equals and hash code can be consfusing since the fact that HashMap uses them is not visible in the code.
 At the same time the intent of these methods is clear if the maintainer has this knowledge.
 
 ## Performance
-Since reads every word from the input file only once execution time is O(n) where n is the number of words.
+Since every word is read from the input file only once execution time is O(n) where n is the number of words.
 Asymptotically this is optimal since every input word must be read.
 The maximum word has limited impact if it is small compared to the number of words - which seems reasonable to assume.
 
@@ -91,4 +92,3 @@ This would probably require a lot of effort considering maximum table sizes.
 
 Depending on the use case a potential solution is to remove duplicates.
 For natural languages this results in a manageable input size not larger than a common dictionary.
-For other use cases, for example cryptography, this is not that beneficial.
