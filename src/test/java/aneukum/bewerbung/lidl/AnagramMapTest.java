@@ -14,6 +14,7 @@ public class AnagramMapTest {
     public void putsAnagramsOnSeparateLines() throws IOException {
         StringReader stringReader = new StringReader("restful\nevil\nfluster\nvile\nno");
         AnagramMap anagramMap = new AnagramMap(stringReader);
+
         StringWriter stringWriter = new StringWriter();
         anagramMap.write(stringWriter);
         String anagrams = stringWriter.toString();

@@ -13,11 +13,11 @@ import java.util.HashMap;
  *
  * This is surrogate aware and O(n).
  */
-public final class Anagram {
+public final class AnagramKey {
 
     private final HashMap<Integer, Integer> codePointCounts = new HashMap<>();
 
-    public Anagram(String string) {
+    public AnagramKey(String string) {
         string.codePoints().forEach(codePoint -> {
             codePointCounts.putIfAbsent(codePoint, 0);
             codePointCounts.put(codePoint, codePointCounts.get(codePoint) + 1);
@@ -28,8 +28,8 @@ public final class Anagram {
     public boolean equals(Object other) {
         if (this == other) return true;
         if (other == null || getClass() != other.getClass()) return false;
-        Anagram otherAnagram = (Anagram) other;
-        return codePointCounts.equals(otherAnagram.codePointCounts);
+        AnagramKey otherAnagramKey = (AnagramKey) other;
+        return codePointCounts.equals(otherAnagramKey.codePointCounts);
     }
 
     @Override
